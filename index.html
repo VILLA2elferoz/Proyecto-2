@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskMaster Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Bienvenido a TaskMaster Pro</h1>
+
+  <div id="login-section">
+    <h2>Iniciar sesión</h2>
+    <input type="text" id="username" placeholder="Usuario" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <button id="btn-login">Entrar</button>
+    <p id="login-error" style="color: red;"></p>
+  </div>
+
+  <div id="main-app" style="display: none;">
+    <h2>Hola, <span id="user-name"></span> 👋</h2>
+
+    <h3>Registrar nueva tarea</h3>
+    <form id="task-form">
+      <input type="text" id="task-id" placeholder="ID de la tarea"><br>
+      <input type="text" id="task-title" placeholder="Título"><br>
+      <textarea id="task-desc" placeholder="Descripción"></textarea><br>
+      <input type="date" id="task-date"><br>
+      <input type="text" id="client-name" placeholder="Nombre del cliente"><br>
+      <input type="text" id="project-id" placeholder="ID del proyecto"><br>
+      <textarea id="comments" placeholder="Comentarios"></textarea><br>
+      <select id="status">
+        <option value="Por hacer" selected>Por hacer</option>
+        <option value="En progreso">En progreso</option>
+        <option value="Terminado">Terminado</option>
+      </select><br>
+      <button type="submit">Guardar tarea</button>
+    </form>
+
+    <h3>Filtrar por estatus</h3>
+    <select id="filtro-estatus">
+      <option value="Todos">Todos</option>
+      <option value="Por hacer">Por hacer</option>
+      <option value="En progreso">En progreso</option>
+      <option value="Rechazado">Rechazado</option>
+      <option value="Cancelado">Cancelado</option>
+      <option value="Cerrado">Cerrado</option>
+      <option value="En pruebas de calidad">En pruebas de calidad</option>
+      <option value="En validación por el usuario">En validación por el usuario</option>
+      <option value="En proceso de liberación">En proceso de liberación</option>
+    </select>
+
+    <h3>Lista de Tareas</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Fecha</th>
+          <th>Cliente</th>
+          <th>Proyecto</th>
+          <th>Comentarios</th>
+          <th>Estatus</th>
+        </tr>
+      </thead>
+      <tbody id="task-table">
+        <!-- Aquí se agregan las tareas -->
+      </tbody>
+    </table>
+
+    <h3>Editar Tarea Seleccionada</h3>
+    <div id="edit-section">
+      <input type="text" id="edit-id" placeholder="ID" disabled><br>
+      <input type="text" id="edit-title" placeholder="Título" disabled><br>
+      <textarea id="edit-desc" placeholder="Descripción" disabled></textarea><br>
+      <textarea id="new-comment" placeholder="Nuevo comentario"></textarea><br>
+      <select id="edit-status">
+        <option value="En progreso">En progreso</option>
+        <option value="Rechazado">Rechazado</option>
+        <option value="Cancelado">Cancelado</option>
+        <option value="Cerrado">Cerrado</option>
+        <option value="En pruebas de calidad">En pruebas de calidad</option>
+        <option value="En validación por el usuario">En validación por el usuario</option>
+        <option value="En proceso de liberación">En proceso de liberación</option>
+      </select><br>
+      <button id="update-task">Actualizar tarea</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
